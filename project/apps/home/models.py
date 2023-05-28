@@ -30,3 +30,17 @@ class Organizacion(models.Model):
     region_id = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True)
     def __str__(self) -> str:
         return self.nombre
+
+class Sexo(models.Model):
+    sexo = models.CharField(max_length=30)
+    def __str__(self) -> str:
+        return self.sexo
+    
+class Transito(models.Model):
+    nombre = models.CharField(max_length=30)
+    edad = models.IntegerField()
+    organizacion_id = models.ForeignKey(Organizacion, on_delete=models.SET_NULL, null=True)
+    sexo_id = models.ForeignKey(Sexo, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self) -> str:
+        return self.nombre
