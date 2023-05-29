@@ -41,7 +41,7 @@ class Organizacion(models.Model):
     email = models.EmailField()
     region_id = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True)
     def __str__(self) -> str:
-        return self.nombre
+        return f"Nombre: {self.nombre}, Zona de cobertura: {self.region_id} "
 
 class Sexo(models.Model):
     """
