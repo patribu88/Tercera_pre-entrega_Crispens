@@ -41,6 +41,7 @@ class Transito(models.Model):
     edad = models.IntegerField()
     organizacion_id = models.ForeignKey(Organizacion, on_delete=models.SET_NULL, null=True)
     sexo_id = models.ForeignKey(Sexo, on_delete=models.SET_NULL, null=True)
+    animal_id = models.ForeignKey(Animales, on_delete=models.SET_NULL, null=True)
 
     def __str__(self) -> str:
-        return self.nombre
+        return f"Nombre: {self.nombre}, Animal: {self.animal_id}, Edad: {self.edad}, Organización: {self.organizacion_id}"

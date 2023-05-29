@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{% block CONTENIDO %}
+
+
+    {% block content_transitos %}
+    <h2>Tránsitos disponibles</h2>
+    <h3>Estos son los animales que esperan tránsito hasta su adopción</h3>
+    {% for transito in transitos %}
+        <ul>   
+            <li> {{transito}}</li>
+        </ul> 
+    {% endfor %}
+    {% endblock content_transitos %}
+
+
+    {% endblock CONTENIDO %}

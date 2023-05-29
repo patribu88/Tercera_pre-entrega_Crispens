@@ -36,3 +36,9 @@ def organizaciones_list(request):
     organizaciones = models.Organizacion.objects.all()
     contexto = {"organizaciones": organizaciones}
     return render(request, 'home/organizaciones_list.html', contexto)
+
+def transitos_list(request):
+    transitos = models.Transito.objects.all()
+    contexto = {"transitos": transitos}
+    return render(request, 'home/transitos_list.html', contexto)
+
