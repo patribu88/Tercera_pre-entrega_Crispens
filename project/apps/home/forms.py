@@ -12,3 +12,8 @@ class UsuarioForm(forms.ModelForm):
     class Meta:
         model = models.Usuario
         fields = '__all__'
+
+class TransitoForm(forms.ModelForm):
+    class Meta:
+        model = models.Transito
+        fields = '__all__'

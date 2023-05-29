@@ -42,3 +42,15 @@ def transitos_list(request):
     contexto = {"transitos": transitos}
     return render(request, 'home/transitos_list.html', contexto)
 
+def crear_transito(request):
+    if request.method == 'POST':
+        form = forms.TransitoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home:index')
+    else:
+        form = forms.TransitoForm()
+        context = {"form": form}
+        return render(request, "home/crear_transito.html", context)
+    
+
