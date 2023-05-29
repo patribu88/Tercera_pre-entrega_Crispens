@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
+from django.http import HttpRequest, HttpResponse
 
 from .import forms
+
+from .import models
 # Create your views here.
 
 def index(request):
     return render(request, 'home/index.html')
-
 
 def crear_usuario(request):
     if request.method == 'POST':
@@ -28,3 +30,9 @@ def crear_organizacion(request):
         form = forms.OrganizacionForm()
         context = {"form": form}
         return render(request, "home/crear_organizacion.html", context)
+    
+
+def organizaciones_list(request):
+    organizaciones = models.Organizacion.objects.all()
+    contexto = {"organizaciones": organizaciones}
+    return render(request, 'home/organizaciones_list.html', contexto)

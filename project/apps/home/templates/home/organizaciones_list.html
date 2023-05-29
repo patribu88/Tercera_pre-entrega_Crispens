@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+
+{% block CONTENIDO %}
+
+
+    {% block content_organizaciones %}
+    <h2>Lista de Organizaciones</h2>
+    {% for organizacion in organizaciones %}
+        <ul>   
+            <li> {{organizacion}}</li>
+        </ul> 
+    {% endfor %}
+    {% endblock content_organizaciones %}
+
+
+    {% endblock CONTENIDO %}
